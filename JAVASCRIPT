@@ -1,0 +1,42 @@
+// Variable to hold the array of minted guns
+const mintedGuns = [];
+
+// Function to mint guns with provided metadata
+function mintGun(name, description, rarity) {
+    // Create an object to hold the metadata for the gun
+    const gun = {
+        name: name,
+        description: description,
+        rarity: rarity
+    };
+
+    // Push the created gun object into the array
+    mintedGuns.push(gun);
+    console.log("Minted Gun:", name);
+}
+
+// Function to list all minted guns with their metadata
+function listMintedGuns() {
+    mintedGuns.forEach((gun, index) => {
+        console.log("\nID:\t\t\t" + (index + 1));
+        console.log("Name:\t\t\t" + gun.name);
+        console.log("Description:\t" + gun.description);
+        console.log("Rarity:\t\t\t" + gun.rarity);
+    });
+}
+
+// Function to get the total number of minted guns
+function getTotalMintedGuns() {
+    console.log("\nTotal number of minted Guns:", mintedGuns.length);
+}
+
+// Minting some guns
+mintGun("Shotgun", "Powerful close-range firearm", "Rare");
+mintGun("Sniper Rifle", "Long-range precision firearm", "Epic");
+mintGun("Submachine Gun", "Rapid-fire automatic firearm", "Common");
+
+// Listing all minted guns
+listMintedGuns();
+
+// Getting the total supply of minted guns
+getTotalMintedGuns();
